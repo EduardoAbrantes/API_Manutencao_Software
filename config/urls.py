@@ -19,8 +19,10 @@ from django.urls import path
 from rest_framework.routers import SimpleRouter
 from rest_framework.authtoken import views
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
+from produtos.views import ProdutoViewSet
 
 router = SimpleRouter()
+router.register('api/produtos', ProdutoViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
